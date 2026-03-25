@@ -19,7 +19,7 @@ namespace GameLogic
 
         private partial UniTaskVoid OnClickPlayBtn()
         {
-            GameEvent.Send("BattleStart");
+            GameEvent.Send("ReadPersistentInfo");
             return default;
         }
 
