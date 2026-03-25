@@ -12,13 +12,14 @@ namespace Procedure
         protected override void OnEnter(IFsm<IProcedureModule> procedureOwner)
         {
             base.OnEnter(procedureOwner);
-            StartGame().Forget();
+            StartGame(procedureOwner).Forget();
         }
 
-        private async UniTaskVoid StartGame()
+        private async UniTaskVoid StartGame(IFsm<IProcedureModule> procedureOwner)
         {
             await UniTask.Yield();
             LauncherMgr.HideAllUI();
+            ChangeState<ProcedureMenu>(procedureOwner);
         }
     }
 }
