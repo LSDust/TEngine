@@ -23,3 +23,7 @@ Tools/GameEventSourceGenerator/SourceGenerator/obj
 
 #openspec
 openspec/
+
+#supplement
+.trae/documents
+.trae/specs

@@ -3,3 +3,15 @@
 # ReSharper properties
 resharper_csharp_max_line_length = 180
 resharper_place_attribute_on_same_line = false
+
+# c# 文件
+[*.cs]
+# 缩进和间距
+indent_size = 4
+indent_style = space
+tab_width = 4
+#### .NET 编码约定 ####
+charset = utf-8
+# 新行首选项
+# end_of_line = lf
+insert_final_newline = true

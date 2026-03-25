@@ -74,9 +74,6 @@ crashlytics-build.properties
 [Aa]ssets/StreamingAssets/
 [Aa]ssets/StreamingAssets.meta
 
-#Rider
-/.idea/
-
 #Bundles
 Bundles/
 
@@ -99,3 +96,9 @@ package/
 yoo/
 [Aa]ssets/TEngine/AssetSetting/Resources/BuiltinFileManifest.asset
 [Aa]ssets/TEngine/AssetSetting/Resources/BuiltinFileManifest.asset.meta
+
+#Supplement
+UserSettings/
+.vscode/
+*.slnx
+*.unitypackage.meta
