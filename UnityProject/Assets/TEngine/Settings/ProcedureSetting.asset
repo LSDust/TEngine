@@ -21,7 +21,9 @@ MonoBehaviour:
   - Procedure.ProcedureInitResources
   - Procedure.ProcedureLaunch
   - Procedure.ProcedureLoadAssembly
+  - Procedure.ProcedureMenu
   - Procedure.ProcedurePreload
+  - Procedure.ProcedureReadPersistentInfo
   - Procedure.ProcedureSplash
   - Procedure.ProcedureStartGame
   entranceProcedureTypeName: Procedure.ProcedureLaunch
