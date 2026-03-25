@@ -32,15 +32,26 @@
    - 在GameModule中添加IInputModule
 
 ## 三、导入URP
-   1. 导入URP包重启
-   2. 全局材质修复一次
+1. 导入URP包重启
+2. 全局材质修复一次
 
-## 四、 原始场景修改
-   1. 替换Main场景
-   2. 两个预制体修改
-   3. 将相机转换为URP相机
-   4. 导入TMP
-   5. 添加UI_Environment场景
+## 四、原始场景修改
+1. 替换Main场景
+2. UI预制体修改
+   - 将相机转换为URP相机
+   - EventSystem调整为InputSystem
+   - Canvas修改
+3. 导入TMP
+4. 添加UI_Environment场景
+## 五 新建基础场景和场景跳转
+1. 完善main场景
+   - 导入中文字体
+   - 添加UI预制体
+   - 给UI相机添加组件
+2. 添加场景Loading
+   - 扩展SceneModule,添加带进度条的场景加载方式
+3. 流程梳理
+   - StartGame -> Menu -> ReadPersistentInfo 
 
 
 
