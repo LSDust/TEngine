@@ -43,7 +43,7 @@
    - Canvas修改
 3. 导入TMP
 4. 添加UI_Environment场景
-## 五 新建基础场景和场景跳转
+## 五、新建基础场景和场景跳转
 1. 完善main场景
    - 导入中文字体
    - 添加UI预制体
@@ -52,6 +52,9 @@
    - 扩展SceneModule,添加带进度条的场景加载方式
 3. 流程梳理
    - StartGame -> Menu -> ReadPersistentInfo 
+## 六、序列化和持久化优化
+1. 序列化函数添加参数
+2. 持久化添加异步方法
 
 
 
