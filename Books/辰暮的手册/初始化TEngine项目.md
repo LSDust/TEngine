@@ -1,4 +1,4 @@
-# 一、修复
+## 一、修复
 1. 修改包引用
    - 添加TMP
    - 删除accessibility
@@ -19,5 +19,18 @@
 
 5. 更新插件
 6. 修改根命名空间
+
+## 二、Input System
+1. 导入Input System
+   - 设置中停用旧输入系统
+   <!-- - UI的EventSystem点一下(顺便加个平行光) -->
+   - 将InputModule目录拖拽到Module下
+   - 设定InputSystem_Actions
+
+2. InputSystem_Actions类使用
+   - 创建IInputModule和InputModule
+   - 在GameModule中添加IInputModule
+
+
 
 
