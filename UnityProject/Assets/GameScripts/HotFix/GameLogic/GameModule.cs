@@ -84,6 +84,13 @@ public class GameModule
     public static ILocalizationModule Localization => _localization ??= Get<ILocalizationModule>();
     
     private static ILocalizationModule _localization;
+    
+    /// <summary>
+    /// 获取输入模块
+    /// </summary>
+    public static IInputModule Input => _input ??= Get<IInputModule>();
+
+    private static IInputModule _input;
     #endregion
     
     /// <summary>
