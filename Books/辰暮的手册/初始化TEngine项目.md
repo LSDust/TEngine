@@ -31,6 +31,15 @@
    - 创建IInputModule和InputModule
    - 在GameModule中添加IInputModule
 
+## 三、导入URP
+   1. 导入URP包重启
+   2. 全局材质修复一次
+
+## 四、 替换Main场景
+   - 两个预制体修改
+   - 将相机转换为URP相机
+
+
 
 
 
