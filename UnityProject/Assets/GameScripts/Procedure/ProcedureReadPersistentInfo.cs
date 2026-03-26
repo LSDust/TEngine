@@ -33,13 +33,11 @@ namespace Procedure
         private async UniTask ReadPersistentInfo(IFsm<IProcedureModule> procedureOwner)
         {
             await GameModule.Scene.LoadSceneAsync("Loading", LoadSceneMode.Single, false);
-            // 1. 显示进度条的UI
-            var uiProgressBar = await GameModule.UI.ShowUIAsyncAwait<UI_ProgressBar>();
-            // 加载资源
-            await UniTask.Delay(10);
-            await GameModule.Scene.LoadSceneAsync(procedureOwner.GetData<string>("NextSceneName"), LoadSceneMode.Single, true);
-            GameModule.UI.CloseUI<UI_ProgressBar>();
-            // ChangeState<PlayerRoom>(procedureOwner);
+            var uiWait = await GameModule.UI.ShowUIAsyncAwait<UI_Wait>();
+            // todo:加载资源
+            await GameModule.Scene.LoadSceneAsync(procedureOwner.GetData<string>("NextSceneName"), LoadSceneMode.Single, false);
+            GameModule.UI.CloseUI<UI_Wait>();
+            // todo: ChangeState<PlayerRoom>(procedureOwner);
         }
     }
 }
