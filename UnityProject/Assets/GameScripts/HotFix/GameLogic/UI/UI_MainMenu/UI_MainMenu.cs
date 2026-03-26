@@ -13,8 +13,8 @@ using TEngine;
 
 namespace GameLogic
 {
-    [Window(UILayer.UI, location : "UI_Menu")]
-    public partial class UI_Menu : UIWindow
+    [Window(UILayer.UI, location : "UI_MainMenu")]
+    public partial class UI_MainMenu : UIWindow
     {
         #region 脚本工具生成的代码
 
@@ -24,7 +24,13 @@ namespace GameLogic
         protected override void ScriptGenerator()
         {
             m_bindComponent = gameObject.GetComponent<UIBindComponent>();
+            if(m_bindComponent == null)
+            {
+                Log.Error($"根物体: {gameObject.name} 缺少组件 UIBindComponent, 请检查！！！");
+                return;
+            }
             m_btnPlay = m_bindComponent.GetComponent<Button>(0);
+            m_btnPlay.onClick.RemoveAllListeners();
             m_btnPlay.onClick.AddListener(UniTask.UnityAction(OnClickPlayBtn));
         }
 

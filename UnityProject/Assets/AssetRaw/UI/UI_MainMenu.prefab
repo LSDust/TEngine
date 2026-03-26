@@ -68,7 +68,7 @@ MonoBehaviour:
   m_text: "\u5F00\u59CB"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ba3ada64f6d6cb40be5ed1560038ed3, type: 2}
-  m_sharedMaterial: {fileID: 8809470712117131071, guid: 0ba3ada64f6d6cb40be5ed1560038ed3, type: 2}
+  m_sharedMaterial: {fileID: -495497707943822399, guid: 0ba3ada64f6d6cb40be5ed1560038ed3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 8789156939679102993}
   - component: {fileID: 48738534749770559}
   m_Layer: 5
-  m_Name: UI_Menu
+  m_Name: UI_MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_components:
   - {fileID: 1860006153911005873}
   genCodePath: Assets/GameScripts/HotFix/GameLogic/UI/Gen
-  className: UI_Menu
+  className: UI_MainMenu
   impCodePath: Assets/GameScripts/HotFix/GameLogic/UI
   isGenImpClass: 0
   uiType: UIWindow

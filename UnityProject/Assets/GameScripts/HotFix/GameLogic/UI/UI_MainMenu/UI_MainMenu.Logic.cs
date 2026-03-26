@@ -13,7 +13,7 @@ using TEngine;
 
 namespace GameLogic
 {
-    public partial class UI_Menu : UIWindow
+    public partial class UI_MainMenu : UIWindow
     {
         #region 事件
 

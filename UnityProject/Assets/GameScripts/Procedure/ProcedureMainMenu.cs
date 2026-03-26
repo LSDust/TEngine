@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Procedure
 {
-    public class ProcedureMenu : ProcedureBase
+    public class ProcedureMainMenu : ProcedureBase
     {
         public override bool UseNativeDialog { get; }
         private IFsm<IProcedureModule> _procedureOwner;
@@ -14,7 +14,7 @@ namespace Procedure
         protected override void OnEnter(IFsm<IProcedureModule> procedureOwner)
         {
             base.OnEnter(procedureOwner);
-            GameModule.UI.ShowUIAsync<UI_Menu>();
+            GameModule.UI.ShowUIAsync<UI_MainMenu>();
             this._procedureOwner = procedureOwner;
             
             GameEvent.AddEventListener("ReadPersistentInfo", ReadPersistentInfo);
@@ -23,21 +23,13 @@ namespace Procedure
         protected override void OnLeave(IFsm<IProcedureModule> procedureOwner, bool isShutdown)
         {
             base.OnLeave(procedureOwner, isShutdown);
-            GameModule.UI.CloseUI<UI_Menu>();
+            GameModule.UI.CloseUI<UI_MainMenu>();
             GameEvent.RemoveEventListener("ReadPersistentInfo", ReadPersistentInfo);
         }
 
-        private async void ReadPersistentInfo()
+        private void ReadPersistentInfo()
         {
-            try
-            {
-                await GameModule.Scene.LoadSceneWithProgressBarAsync("PersistentInfo");
-                ChangeState<ProcedureReadPersistentInfo>(_procedureOwner);
-            }
-            catch (System.Exception e)
-            {
-                Log.Error($"加载场景失败: {e.Message}");
-            }
+            ChangeState<ProcedureReadPersistentInfo>(_procedureOwner);
         }
     }
 }
