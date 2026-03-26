@@ -21,7 +21,7 @@ MonoBehaviour:
   - Procedure.ProcedureInitResources
   - Procedure.ProcedureLaunch
   - Procedure.ProcedureLoadAssembly
-  - Procedure.ProcedureMenu
+  - Procedure.ProcedureMainMenu
   - Procedure.ProcedurePreload
   - Procedure.ProcedureReadPersistentInfo
   - Procedure.ProcedureSplash

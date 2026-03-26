@@ -19,7 +19,7 @@ namespace Procedure
         {
             await UniTask.Yield();
             LauncherMgr.HideAllUI();
-            ChangeState<ProcedureMenu>(procedureOwner);
+            ChangeState<ProcedureMainMenu>(procedureOwner);
         }
     }
 }

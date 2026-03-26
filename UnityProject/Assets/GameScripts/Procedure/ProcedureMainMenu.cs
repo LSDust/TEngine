@@ -29,6 +29,8 @@ namespace Procedure
 
         private void ReadPersistentInfo()
         {
+            // _procedureOwner.SetData("NextProcedure", typeof(ProcedureBattle));
+            _procedureOwner.SetData("NextSceneName", "PlayerRoom");
             ChangeState<ProcedureReadPersistentInfo>(_procedureOwner);
         }
     }
