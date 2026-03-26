@@ -309,8 +309,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u52A0\u8F7D\u4E2D..."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ba3ada64f6d6cb40be5ed1560038ed3, type: 2}
-  m_sharedMaterial: {fileID: 8809470712117131071, guid: 0ba3ada64f6d6cb40be5ed1560038ed3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: eb8bacd46357fb4418b3d529965e7b08, type: 2}
+  m_sharedMaterial: {fileID: 2979193228837331801, guid: eb8bacd46357fb4418b3d529965e7b08, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -471,7 +471,7 @@ MonoBehaviour:
   - {fileID: 7959670601499542464}
   - {fileID: 4849657185816153898}
   genCodePath: Assets/GameScripts/HotFix/GameLogic/UI/Gen
-  className: UI_Loading
+  className: UI_ProgressBar
   impCodePath: Assets/GameScripts/HotFix/GameLogic/UI
   isGenImpClass: 0
   uiType: UIWindow
