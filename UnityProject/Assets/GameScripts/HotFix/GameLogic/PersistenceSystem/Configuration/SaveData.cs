@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace GameLogic
 {
     [System.Serializable]
-    public class SaveData
+    public class SaveData : IPersistenceData
     {
         [JsonProperty("version")]
         public int version = 1;

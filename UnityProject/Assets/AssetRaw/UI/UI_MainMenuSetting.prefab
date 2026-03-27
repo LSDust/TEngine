@@ -248,7 +248,6 @@ GameObject:
   - component: {fileID: 2342892370966647659}
   - component: {fileID: 3694197985771848479}
   - component: {fileID: 8276112950776530458}
-  - component: {fileID: 673239445485824331}
   m_Layer: 5
   m_Name: UI_MainMenuSetting
   m_TagString: Untagged
@@ -316,25 +315,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &673239445485824331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4717951669683406252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da5b4f8f74fed5b43b4b4c25dc3eac22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_components:
-  - {fileID: 6368788929244754471}
-  genCodePath: Assets/GameScripts/HotFix/GameLogic/UI/Gen
-  className: UI_MainMenuSetting
-  impCodePath: Assets/GameScripts/HotFix/GameLogic/UI
-  isGenImpClass: 0
-  uiType: UIWindow
 --- !u!1 &5441998987050123501
 GameObject:
   m_ObjectHideFlags: 0

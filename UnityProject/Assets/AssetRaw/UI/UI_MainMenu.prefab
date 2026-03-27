@@ -470,6 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_components:
   - {fileID: 1860006153911005873}
+  - {fileID: 2611675698597963297}
   genCodePath: Assets/GameScripts/HotFix/GameLogic/UI/Gen
   className: UI_MainMenu
   impCodePath: Assets/GameScripts/HotFix/GameLogic/UI
