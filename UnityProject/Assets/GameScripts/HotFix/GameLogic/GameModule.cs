@@ -91,6 +91,13 @@ public class GameModule
     public static IInputModule Input => _input ??= Get<IInputModule>();
 
     private static IInputModule _input;
+    
+    /// <summary>
+    /// 获取持久化模块
+    /// </summary>
+    public static PersistenceModule PersistenceModule => _persistenceModule ??= PersistenceModule.Instance;
+
+    private static PersistenceModule _persistenceModule;
     #endregion
     
     /// <summary>
