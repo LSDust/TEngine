@@ -35,6 +35,7 @@ namespace Procedure
             await GameModule.Scene.LoadSceneAsync("Loading", LoadSceneMode.Single, false);
             var uiWait = await GameModule.UI.ShowUIAsyncAwait<UI_Wait>();
             // todo:加载资源
+            // await GameModule.Resource.LoadAssetAsync<TextAsset>(string.Empty);
             await GameModule.Scene.LoadSceneAsync(procedureOwner.GetData<string>("NextSceneName"), LoadSceneMode.Single, true);
             GameModule.UI.CloseUI<UI_Wait>();
             // todo: ChangeState<PlayerRoom>(procedureOwner);

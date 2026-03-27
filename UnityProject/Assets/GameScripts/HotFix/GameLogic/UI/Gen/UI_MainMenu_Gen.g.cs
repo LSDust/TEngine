@@ -19,6 +19,7 @@ namespace GameLogic
 
 		private UIBindComponent m_bindComponent;
 		private Button m_btnPlay = null!;
+		private Button m_btnSetting = null!;
 
 		protected override void ScriptGenerator()
 		{
@@ -29,8 +30,11 @@ namespace GameLogic
 				return;
 			}
 			m_btnPlay = m_bindComponent.GetComponent<Button>(0);
+			m_btnSetting = m_bindComponent.GetComponent<Button>(1);
 			m_btnPlay.onClick.RemoveAllListeners();
 			m_btnPlay.onClick.AddListener(UniTask.UnityAction(OnClickPlayBtn));
+			m_btnSetting.onClick.RemoveAllListeners();
+			m_btnSetting.onClick.AddListener(UniTask.UnityAction(OnClickSettingBtn));
 		}
 
 		#endregion
@@ -38,6 +42,8 @@ namespace GameLogic
 		#region 事件
 
 		private partial UniTaskVoid OnClickPlayBtn();
+
+		private partial UniTaskVoid OnClickSettingBtn();
 
 		#endregion
 	}

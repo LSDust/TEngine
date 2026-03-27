@@ -23,6 +23,12 @@ namespace GameLogic
             return default;
         }
 
+        private partial UniTaskVoid OnClickSettingBtn()
+        {
+            // todo: 打开设置面板
+            return default;
+        }
+
         #endregion
     }
 }
