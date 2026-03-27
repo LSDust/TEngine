@@ -31,7 +31,7 @@ namespace Procedure
         {
             // _procedureOwner.SetData("NextProcedure", typeof(ProcedureBattle));
             _procedureOwner.SetData("NextSceneName", "PlayerRoom");
-            ChangeState<ProcedureReadSceneDataLoad>(_procedureOwner);
+            ChangeState<ProcedureReadDataLoadScene>(_procedureOwner);
         }
     }
 }
