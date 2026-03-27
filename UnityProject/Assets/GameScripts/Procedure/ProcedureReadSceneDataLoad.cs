@@ -15,22 +15,10 @@ namespace Procedure
         protected override void OnEnter(IFsm<IProcedureModule> procedureOwner)
         {
             base.OnEnter(procedureOwner);
-            //todo: 失败处理
-            ReadPersistentInfo(procedureOwner).Forget();
+            ReadSceneDataLoad(procedureOwner).Forget();
         }
 
-        protected override void OnUpdate(IFsm<IProcedureModule> procedureOwner, float elapseSeconds, float realElapseSeconds)
-        {
-            base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-        }
-
-        protected override void OnLeave(IFsm<IProcedureModule> procedureOwner, bool isShutdown)
-        {
-            base.OnLeave(procedureOwner, isShutdown);
-            // GameModule.UI.CloseUI<UI_Battle>();
-        }
-
-        private async UniTask ReadPersistentInfo(IFsm<IProcedureModule> procedureOwner)
+        private async UniTask ReadSceneDataLoad(IFsm<IProcedureModule> procedureOwner)
         {
             await GameModule.Scene.LoadSceneAsync("Loading", LoadSceneMode.Single, false);
             var uiWait = await GameModule.UI.ShowUIAsyncAwait<UI_Wait>();
