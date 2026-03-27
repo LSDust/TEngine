@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 namespace Procedure
 {
-    public class ProcedureReadPersistentInfo : ProcedureBase
+    public class ProcedureReadSceneDataLoad : ProcedureBase
     {
         public override bool UseNativeDialog { get; }
         
