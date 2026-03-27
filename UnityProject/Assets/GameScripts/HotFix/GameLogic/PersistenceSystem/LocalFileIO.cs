@@ -14,7 +14,7 @@ namespace GameLogic
             {
                 if (string.IsNullOrEmpty(filePath))
                 {
-                    Log.Error("File path is null or empty.");
+                    Log.Error("文件路径为空或null。");
                     return false;
                 }
 
@@ -22,55 +22,27 @@ namespace GameLogic
                 if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
                 {
                     Directory.CreateDirectory(directory);
-                    Log.Info($"Created directory: {directory}");
+                    Log.Info($"创建目录: {directory}");
                 }
 
                 File.WriteAllText(filePath, data);
-                Log.Info($"Save file written successfully: {filePath}");
+                Log.Info($"保存文件成功: {filePath}");
                 return true;
             }
             catch (Exception e)
             {
-                Log.Error($"Failed to write file: {e.Message}");
+                Log.Error($"写入文件失败: {e.Message}");
                 return false;
             }
         }
-
-        public static async Task<bool> WriteStringToFileAsync(string filePath, string data)
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(filePath))
-                {
-                    Log.Error("File path is null or empty.");
-                    return false;
-                }
-
-                string directory = Path.GetDirectoryName(filePath);
-                if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
-                {
-                    Directory.CreateDirectory(directory);
-                    Log.Info($"Created directory: {directory}");
-                }
-
-                await File.WriteAllTextAsync(filePath, data);
-                Log.Info($"Save file written asynchronously: {filePath}");
-                return true;
-            }
-            catch (Exception e)
-            {
-                Log.Error($"Failed to write file asynchronously: {e.Message}");
-                return false;
-            }
-        }
-
+        
         public static string ReadStringFromFile(string filePath)
         {
             try
             {
                 if (!File.Exists(filePath))
                 {
-                    Log.Warning($"File does not exist: {filePath}");
+                    Log.Warning($"文件不存在: {filePath}");
                     return string.Empty;
                 }
 
@@ -78,61 +50,29 @@ namespace GameLogic
             }
             catch (Exception e)
             {
-                Log.Error($"Failed to read file: {e.Message}");
+                Log.Error($"读取文件失败: {e.Message}");
                 return string.Empty;
             }
         }
-
-        public static async Task<string> ReadStringFromFileAsync(string filePath)
-        {
-            try
-            {
-                if (!File.Exists(filePath))
-                {
-                    Log.Warning($"File does not exist: {filePath}");
-                    return string.Empty;
-                }
-
-                return await File.ReadAllTextAsync(filePath);
-            }
-            catch (Exception e)
-            {
-                Log.Error($"Failed to read file asynchronously: {e.Message}");
-                return string.Empty;
-            }
-        }
-
+        
         public static bool DeleteFile(string filePath)
         {
             try
             {
                 if (!File.Exists(filePath))
                 {
-                    Log.Warning($"File does not exist, cannot delete: {filePath}");
+                    Log.Warning($"文件不存在,无法删除: {filePath}");
                     return false;
                 }
 
                 File.Delete(filePath);
-                Log.Info($"File deleted successfully: {filePath}");
+                Log.Info($"删除文件成功: {filePath}");
                 return true;
             }
             catch (Exception e)
             {
-                Log.Error($"Failed to delete file: {e.Message}");
+                Log.Error($"删除文件失败: {e.Message}");
                 return false;
-            }
-        }
-
-        public static bool FileExists(string filePath)
-        {
-            return File.Exists(filePath);
-        }
-
-        public static void EnsureDirectoryExists(string directoryPath)
-        {
-            if (!string.IsNullOrEmpty(directoryPath) && !Directory.Exists(directoryPath))
-            {
-                Directory.CreateDirectory(directoryPath);
             }
         }
     }

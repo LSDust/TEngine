@@ -24,7 +24,7 @@ namespace GameLogic
             {
                 if (!FileNameDic.TryGetValue(typeof(T), out string fileName))
                 {
-                    Log.Error($"No file name registered for type: {typeof(T).Name}");
+                    Log.Error($"类型 {typeof(T).Name} 未注册文件名");
                     return false;
                 }
                 
@@ -34,23 +34,23 @@ namespace GameLogic
 
                 if (string.IsNullOrEmpty(jsonData))
                 {
-                    Log.Warning($"File is empty or does not exist: {saveFilePath}");
+                    Log.Warning($"文件为空或不存在: {saveFilePath}");
                     return false;
                 }
 
                 data = Utility.Json.ToObject<T>(jsonData);
                 if (data == null)
                 {
-                    Log.Error($"Failed to deserialize data of type: {typeof(T).Name}");
+                    Log.Error($"反序列化数据失败,类型: {typeof(T).Name}");
                     return false;
                 }
 
-                Log.Info($"Loaded data successfully: {saveFilePath}");
+                Log.Info($"加载数据成功: {saveFilePath}");
                 return true;
             }
             catch (System.Exception e)
             {
-                Log.Error($"Error loading data: {e.Message}");
+                Log.Error($"加载数据出错: {e.Message}");
                 return false;
             }
         }
@@ -61,13 +61,13 @@ namespace GameLogic
             {
                 if (data == null)
                 {
-                    Log.Error("Data is null.");
+                    Log.Error("数据为null。");
                     return false;
                 }
 
                 if (!FileNameDic.TryGetValue(typeof(T), out string fileName))
                 {
-                    Log.Error($"No file name registered for type: {typeof(T).Name}");
+                    Log.Error($"类型 {typeof(T).Name} 未注册文件名");
                     return false;
                 }
 
@@ -77,23 +77,23 @@ namespace GameLogic
 
                 if (string.IsNullOrEmpty(jsonData))
                 {
-                    Log.Error($"Failed to serialize data of type: {typeof(T).Name} to JSON.");
+                    Log.Error($"序列化数据失败,类型: {typeof(T).Name} 无法转为JSON。");
                     return false;
                 }
 
                 bool writeResult = LocalFileIO.WriteStringToFile(saveFilePath, jsonData);
                 if (!writeResult)
                 {
-                    Log.Error($"Failed to write file: {saveFilePath}");
+                    Log.Error($"写入文件失败: {saveFilePath}");
                     return false;
                 }
 
-                Log.Info($"Saved data successfully: {saveFilePath}");
+                Log.Info($"保存数据成功: {saveFilePath}");
                 return true;
             }
             catch (System.Exception e)
             {
-                Log.Error($"Error saving data: {e.Message}");
+                Log.Error($"保存数据出错: {e.Message}");
                 return false;
             }
         }
