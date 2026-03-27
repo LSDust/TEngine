@@ -23,7 +23,7 @@ MonoBehaviour:
   - Procedure.ProcedureLoadAssembly
   - Procedure.ProcedureMainMenu
   - Procedure.ProcedurePreload
-  - Procedure.ProcedureReadSceneDataLoad
+  - Procedure.ProcedureReadDataLoadScene
   - Procedure.ProcedureSplash
   - Procedure.ProcedureStartGame
   entranceProcedureTypeName: Procedure.ProcedureLaunch
