@@ -61,10 +61,16 @@ namespace GameLogic
         public string skillId;
 
         [JsonProperty("level")]
-        public int level = 1;
+        public int level;
 
         [JsonProperty("isUnlocked")]
         public bool isUnlocked = true;
+
+        public SkillSaveData(string skillId, int level)
+        {
+            this.skillId = skillId;
+            this.level = level;
+        }
     }
 
     public class SaveDataExtensions
@@ -84,6 +90,9 @@ namespace GameLogic
                     energy = 50,
                     maxEnergy = 50,
                     skills = new List<SkillSaveData>()
+                    {
+                        new SkillSaveData("Skill_Knife",0)
+                    }
                 }
             };
         }

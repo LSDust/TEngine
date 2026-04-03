@@ -10,7 +10,7 @@ namespace GameLogic
     {
         public static List<AbilityTemplate> Templates { get; private set; }
 
-        public static async UniTaskVoid LoadTemplatesFromJson()
+        public static async UniTask LoadTemplatesFromJson()
         {
             TextAsset jsonAsset = await GameModule.Resource.LoadAssetAsync<TextAsset>("AbilityTemplates");
             AbilityTemplate.Templates = Utility.Json.ToObject<List<AbilityTemplate>>(jsonAsset.text);
