@@ -27,7 +27,6 @@ namespace Procedure
                     }
                 }
             };
-            // AbilityTemplate.LoadTemplatesFromJson().Forget();
         }
 
         protected override void OnEnter(IFsm<IProcedureModule> procedureOwner)

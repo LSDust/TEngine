@@ -50,6 +50,7 @@ namespace Procedure
             {
                 PersistenceSystem.SaveData = data;
             }
+            // await AbilityTemplate.LoadTemplatesFromJson();
             
             // 等待场景资源加载完成
             await sceneResourceLoadedTcs.Task;
@@ -58,7 +59,7 @@ namespace Procedure
             GameModule.Scene.UnSuspend(nextSceneName);
             
             GameModule.UI.CloseUI<UI_Wait>();
-            // todo: ChangeState<PlayerRoom>(procedureOwner);
+            ChangeState<ProcedurePlayerRoom>(procedureOwner);
         }
     }
 }
