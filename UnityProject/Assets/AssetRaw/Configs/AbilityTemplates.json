@@ -1,0 +1,30 @@
+[
+  {
+    "Id": "Skill_Knife",
+    "Name": "飞刀",
+    "Description": "选择一个方向,投掷飞刀(距离为2),对飞刀路径上的敌人造成伤害,角色向反方向移动1个单位",
+    "Level": 0,
+    "Segments": [
+      {
+        "$type": "GameLogic.MoveSegment, GameLogic",
+        "LevelData": [
+          { "Distance": 1, "IsTeleport": false }
+        ],
+        "SegmentId": null,
+        "Type": null
+      },
+      {
+        "$type": "GameLogic.ThrowSegment, GameLogic",
+        "LevelData": [
+          { "ProjectilePrefabPath": "", "Speed": 20.0, "Damage": 10.0, "Range": 2.0 },
+          { "ProjectilePrefabPath": "", "Speed": 20.0, "Damage": 15.0, "Range": 2.0 },
+          { "ProjectilePrefabPath": "", "Speed": 25.0, "Damage": 20.0, "Range": 2.0 },
+          { "ProjectilePrefabPath": "", "Speed": 25.0, "Damage": 25.0, "Range": 3.0 },
+          { "ProjectilePrefabPath": "", "Speed": 30.0, "Damage": 30.0, "Range": 3.0 }
+        ],
+        "SegmentId": null,
+        "Type": null
+      }
+    ]
+  }
+]
