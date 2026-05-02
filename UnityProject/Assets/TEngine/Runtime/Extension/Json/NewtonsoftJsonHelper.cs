@@ -17,17 +17,17 @@ namespace TEngine
 
         public string ToJson(object obj, object settings = null)
         {
-            return JsonConvert.SerializeObject(obj, Settings);
+            return JsonConvert.SerializeObject(obj, settings as JsonSerializerSettings);
         }
 
         public T ToObject<T>(string json, object settings = null)
         {
-            return JsonConvert.DeserializeObject<T>(json, Settings);
+            return JsonConvert.DeserializeObject<T>(json, settings as JsonSerializerSettings);
         }
 
         public object ToObject(Type objectType, string json, object settings = null)
         {
-            return JsonConvert.DeserializeObject(json, objectType, Settings);
+            return JsonConvert.DeserializeObject(json, objectType, settings as JsonSerializerSettings);
         }
     }
 }
