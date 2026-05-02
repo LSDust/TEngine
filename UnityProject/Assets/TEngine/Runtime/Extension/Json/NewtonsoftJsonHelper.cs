@@ -6,7 +6,7 @@ namespace TEngine
 {
     public class NewtonsoftJsonHelper : Utility.Json.IJsonHelper
     {
-        private readonly JsonSerializerSettings _settings = new()
+        public static JsonSerializerSettings Settings = new()
         {
             ContractResolver = new CamelCasePropertyNamesContractResolver(),
             Formatting = Formatting.Indented,
@@ -15,19 +15,19 @@ namespace TEngine
             ReferenceLoopHandling = ReferenceLoopHandling.Error
         };
 
-        public string ToJson(object obj)
+        public string ToJson(object obj, object settings = null)
         {
-            return JsonConvert.SerializeObject(obj, _settings);
+            return JsonConvert.SerializeObject(obj, Settings);
         }
 
-        public T ToObject<T>(string json)
+        public T ToObject<T>(string json, object settings = null)
         {
-            return JsonConvert.DeserializeObject<T>(json, _settings);
+            return JsonConvert.DeserializeObject<T>(json, Settings);
         }
 
-        public object ToObject(Type objectType, string json)
+        public object ToObject(Type objectType, string json, object settings = null)
         {
-            return JsonConvert.DeserializeObject(json, objectType, _settings);
+            return JsonConvert.DeserializeObject(json, objectType, Settings);
         }
     }
 }
