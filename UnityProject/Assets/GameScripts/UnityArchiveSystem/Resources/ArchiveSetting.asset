@@ -19,4 +19,4 @@ MonoBehaviour:
   FolderName: MySave
   FileName: SaveFile.sav
   FileType: 0
-  ArchiveDirection: 1
+  ArchiveDirection: 0
