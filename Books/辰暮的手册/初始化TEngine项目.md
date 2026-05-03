@@ -51,10 +51,12 @@
 2. 添加场景Loading
    - 扩展SceneModule,添加带进度条的场景加载方式
 3. 流程梳理
-   - StartGame -> Menu -> ReadPersistentInfo 
+   - StartGame -> Menu -> ReadDataLoadScene
 ## 六、序列化和持久化优化
-1. 序列化函数添加参数
-2. 持久化添加异步方法
+1. 序列化:导入Newtonsoft.Json
+2. 持久化:
+   - 使用https://github.com/immortal5205/UnityArchiveSystem.git 开源项目
+   - 视频案例 www.bilibili.com/video/BV1mw9gBgEng
 
 
 
