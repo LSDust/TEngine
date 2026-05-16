@@ -27,3 +27,4 @@ openspec/
 #supplement
 .trae/documents
 .trae/specs
+*.lscache

@@ -151,7 +151,7 @@ public class Rijindael
     /// <summary>
     /// 生成随机IV（16字节，Base64编码）
     /// </summary>
-    internal static string GenerateIV()
+    public static string GenerateIV()
     {
         using var rng = new RNGCryptoServiceProvider();
         byte[] ivBytes = new byte[16]; // 16 bytes for AES
