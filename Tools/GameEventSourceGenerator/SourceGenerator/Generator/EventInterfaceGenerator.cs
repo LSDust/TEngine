@@ -187,7 +187,7 @@ public class EventInterfaceGenerator : ISourceGenerator
     {
         return string.Join(", ", method.ParameterList.Parameters.Select(p => 
         {
-            var typeSymbol = semanticModel.GetTypeInfo(p.Type).Type;
+            var typeSymbol = p.Type != null ? semanticModel.GetTypeInfo(p.Type).Type : null;
             return typeSymbol != null 
                 ? $"{typeSymbol.ToDisplayString()} {p.Identifier}"
                 : $"{p.Type} {p.Identifier}";

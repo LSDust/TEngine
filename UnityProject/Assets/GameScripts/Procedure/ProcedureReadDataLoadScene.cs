@@ -5,6 +5,7 @@ using GameLogic;
 using UnityEngine;
 using TEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 namespace Procedure
 {
@@ -22,10 +23,11 @@ namespace Procedure
         {
             await GameModule.Scene.LoadSceneAsync("Loading", LoadSceneMode.Single, false);
             var uiWait = await GameModule.UI.ShowUIAsyncAwait<UI_Wait>();
-            // todo:加载资源
-            await GameModule.Scene.LoadSceneAsync(procedureOwner.GetData<string>("NextSceneName"), LoadSceneMode.Single, true);
+            // todo:加载资源,获取NextSceneName
+            await GameModule.Scene.LoadSceneAsync(procedureOwner.GetData<string>("NextSceneName"), LoadSceneMode.Single, false);
             GameModule.UI.CloseUI<UI_Wait>();
-            // todo: ChangeState<PlayerRoom>(procedureOwner);
+            Type nextProcedureType = procedureOwner.GetData<Type>("NextProcedure");
+            ChangeState(procedureOwner, nextProcedureType);
         }
     }
 }
