@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoleTest : MonoBehaviour,SLTest.IArchive
+public class RoleArchiveBehaviour : MonoBehaviour,SLSystem.IArchive
 {
-    SLTest.IArchive archive;
+    SLSystem.IArchive archive;
 
     [SerializeField] public RoleData roleData = new();
     

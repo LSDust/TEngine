@@ -23,7 +23,9 @@ namespace Procedure
         {
             await GameModule.Scene.LoadSceneAsync("Loading", LoadSceneMode.Single, false);
             var uiWait = await GameModule.UI.ShowUIAsyncAwait<UI_Wait>();
-            // todo:加载资源,获取NextSceneName
+            //加载资源,获取NextSceneName
+            SLSystem.Load();
+            procedureOwner.SetData<string>("NextSceneName",SLSystem.Instance.CurrentArchiveData.gameProgressData.current_scene);
             await GameModule.Scene.LoadSceneAsync(procedureOwner.GetData<string>("NextSceneName"), LoadSceneMode.Single, false);
             GameModule.UI.CloseUI<UI_Wait>();
             Type nextProcedureType = procedureOwner.GetData<Type>("NextProcedure");

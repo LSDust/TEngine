@@ -13,9 +13,16 @@ public struct RoleData
 }
 
 [Serializable]
+public struct GameProgressData
+{
+    public string current_scene;
+}
+
+[Serializable]
 public class GameData : ArchiveDataBase
 {
     public RoleData roleData;
+    public GameProgressData gameProgressData;
 }
 
 [Serializable]
@@ -24,7 +31,7 @@ public class ArchiveCatalog : ArchiveTableBase
     public string name;
 }
 
-public class SLTest : ArchiveSystem<GameData, ArchiveCatalog>
+public class SLSystem : ArchiveSystem<GameData, ArchiveCatalog>
 {
     [ContextMenu("Save")]
     public void SaveTest()
