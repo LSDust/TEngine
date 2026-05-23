@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameProgressArchive : SLSystem.IArchive
 {
-    public GameProgressData gameProgressData = new();
+    public GameProgressData gameProgressData;
     
     public static GameProgressArchive Instance { get; private set; }
 
@@ -13,11 +13,15 @@ public class GameProgressArchive : SLSystem.IArchive
         Instance = new GameProgressArchive();
         ((SLSystem.IArchive)Instance).Register(Instance);
         SceneManager.sceneLoaded += Instance.OnSceneLoaded;
+        Instance.gameProgressData = new GameProgressData {current_scene = "PlayerRoom"};
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        gameProgressData.current_scene = scene.name;
+        if (scene.name != "Loading")
+        {
+            gameProgressData.current_scene = scene.name;
+        }
     }
 
     public void GetData(GameData data)
