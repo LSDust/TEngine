@@ -298,7 +298,7 @@ namespace NuoYan.Archive
                 else
                 {
                     SaveSingle();
-                    RaiseError(ArchiveErrorType.FileNotFound, $"存档文件不存在: {filePath}");
+                    Debug.LogWarning($"存档文件不存在，已创建默认存档: {filePath}");
                 }
             }
             catch (System.Exception ex)
