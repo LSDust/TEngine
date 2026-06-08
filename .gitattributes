@@ -1,1 +1,84 @@
-UnityProject/Assets/Scenes/*.unity filter=lfs diff=lfs merge=lfs -text
+# ==========================================
+# 1. 默认行为设置
+# ==========================================
+# 让 Git 自动判断文件是否为文本，并规范化换行符（防止跨平台协作时的 CRLF/LF 冲突）
+* text=auto
+
+# ==========================================
+# 2. Git LFS 追踪规则（大文件与二进制资产）
+# ==========================================
+# 设计图与图像源文件
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.ai filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.tga filter=lfs diff=lfs merge=lfs -text
+*.bmp filter=lfs diff=lfs merge=lfs -text
+
+# 3D模型与动画数据
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+
+# 音频与视频资源
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text
+*.aif filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+
+# 压缩包与其他二进制格式
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text
+*.dll filter=lfs diff=lfs merge=lfs -text
+*.so filter=lfs diff=lfs merge=lfs -text
+*.dylib filter=lfs diff=lfs merge=lfs -text
+
+# ==========================================
+# 3. Unity 核心文件处理 (Force Text 模式)
+# ==========================================
+# 强制使用 LF 换行符，并使用 Unity 自带的 YAML 合并工具解决冲突
+*.meta text merge=unityyamlmerge eol=lf
+*.unity text merge=unityyamlmerge eol=lf
+*.asset text merge=unityyamlmerge eol=lf
+*.anim text merge=unityyamlmerge eol=lf
+*.prefab text merge=unityyamlmerge eol=lf
+*.mat text merge=unityyamlmerge eol=lf
+*.controller text merge=unityyamlmerge eol=lf
+*.mask text merge=unityyamlmerge eol=lf
+*.mixer text merge=unityyamlmerge eol=lf
+*.renderTexture text merge=unityyamlmerge eol=lf
+*.guiskin text merge=unityyamlmerge eol=lf
+*.fontsettings text merge=unityyamlmerge eol=lf
+*.lighting text merge=unityyamlmerge eol=lf
+*.overrideController text merge=unityyamlmerge eol=lf
+*.physicMaterial text merge=unityyamlmerge eol=lf
+*.physicsMaterial2D text merge=unityyamlmerge eol=lf
+*.shadervariants text merge=unityyamlmerge eol=lf
+
+# Shader Graph 等 JSON/YAML 混合格式
+*.shadergraph text eol=lf
+*.shadersubgraph text eol=lf
+
+# ==========================================
+# 4. 常规代码与文本文件
+# ==========================================
+# C# 脚本指定使用 csharp 差异对比算法
+*.cs text diff=csharp eol=lf
+*.cginc text eol=lf
+*.shader text eol=lf
+*.compute text eol=lf
+*.hlsl text eol=lf
+
+# 配置文件与文档
+*.json text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Windows 解决方案文件保持 CRLF 兼容
+*.sln text eol=crlf
